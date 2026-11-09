@@ -8,6 +8,7 @@ import { CommandMenu } from "@/components/shared/command-menu";
 import { JsonLd, websiteJsonLd, organizationJsonLd } from "@/components/shared/json-ld";
 import { buildMetadata } from "@/lib/seo";
 import { getAllPosts } from "@/lib/blog";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -69,6 +70,7 @@ export default function RootLayout({
           <SiteFooter />
           <CommandMenu posts={posts} />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
