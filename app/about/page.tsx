@@ -10,7 +10,7 @@ import { CtaBanner } from "@/components/shared/cta-banner";
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "SEO Text Tools is a free collection of fast, private, beautifully designed SEO and text-analysis tools.",
+    "RankBoost is a free collection of fast, private, beautifully designed SEO and text-analysis tools.",
   path: "/about",
 });
 
@@ -25,7 +25,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        title="About SEO Text Tools"
+        title="About RankBoost"
         description="A free toolkit built for writers, marketers and SEOs who value speed, privacy and clean design."
         crumbs={[{ name: "About", path: "/about" }]}
       />
@@ -33,7 +33,7 @@ export default function AboutPage() {
       <section className="container-page py-10">
         <Prose>
           <p>
-            <strong>SEO Text Tools</strong> started with a simple frustration:
+            <strong>RankBoost</strong> started with a simple frustration:
             the best free SEO and text tools were buried under ads, popups and
             clunky interfaces. We wanted something faster, cleaner and genuinely
             pleasant to use — so we built it.

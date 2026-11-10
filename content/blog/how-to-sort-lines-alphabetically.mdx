@@ -1,0 +1,101 @@
+---
+title: "How to Sort Lines Alphabetically or by Length: A Practical Guide"
+description: "Learn how to sort lines alphabetically from A to Z or Z to A, or by line length, and how case sensitivity changes the order. Free, instant and browser-based."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["Text", "Lists", "Formatting"]
+excerpt: "Alphabetizing a list by hand is slow and error-prone. Here's how to sort any list of lines A to Z, Z to A or by length, and what to watch out for."
+readingTime: "5 min read"
+tool: "sort-lines"
+keywords: ["how to sort lines alphabetically", "alphabetize a list", "sort list A to Z", "sort lines by length", "case-sensitive sorting", "reverse alphabetical order"]
+---
+
+To sort lines alphabetically, paste your list into a line sorter, choose A to Z (or Z to A), and copy the result. The free [Sort Lines tool](/tools/sort-lines) can also sort lines by length, shortest or longest first, and lets you choose whether uppercase and lowercase letters are sorted separately.
+
+This guide covers each sorting mode, when to use it, and the quirks of alphabetical order that surprise people.
+
+## Why sort lines at all
+
+A sorted list is easier to scan, compare and maintain. Common uses include:
+
+- **Keyword lists.** Alphabetizing groups variations of the same phrase together, so overlaps and gaps stand out.
+- **Glossaries, tag lists and directories**, where readers expect A to Z order.
+- **Code and config files**, such as lists of imports or dependencies that teams keep alphabetized to reduce merge conflicts.
+- **Comparing two lists.** Once both are sorted the same way, differences are much easier to spot.
+- **Content planning.** Sorting headlines or meta titles by length quickly shows which ones are too long or too short.
+
+## How to sort lines with RankBoost
+
+The [Sort Lines tool](/tools/sort-lines) works entirely in your browser:
+
+1. **Paste your list**, with one item per line.
+2. **Pick a sort mode** from the "Sort by" menu:
+   - Alphabetical (A to Z)
+   - Alphabetical (Z to A)
+   - Length (short to long)
+   - Length (long to short)
+3. **Set case sensitivity.** "Case-sensitive" is off by default, so "apple" and "Apple" are compared as if they were the same letters.
+4. **Copy the sorted output.** The "Lines sorted" metric confirms how many lines were processed.
+
+Alphabetical sorting uses locale-aware comparison, so accented characters such as "é" sort alongside their unaccented letters rather than being pushed to the end of the list.
+
+## Examples of each sort mode
+
+Starting list: banana, Apple, cherry, date, elderberry.
+
+| Mode | Result |
+| --- | --- |
+| A to Z | Apple, banana, cherry, date, elderberry |
+| Z to A | elderberry, date, cherry, banana, Apple |
+| Short to long | date, Apple, banana, cherry, elderberry |
+| Long to short | elderberry, banana, cherry, Apple, date |
+
+When two lines have the same length, the length modes keep them in their original relative order. That's why "banana" stays ahead of "cherry" in both length sorts.
+
+## Common sorting surprises
+
+### Numbers sort as text
+
+Alphabetical sorting compares lines character by character, so "10 tips" comes before "2 tips" because "1" comes before "2". If you need numeric order, pad numbers with leading zeros (for example "02" and "10") before sorting.
+
+### Spaces and blank lines sort first
+
+A line that starts with a space, or a completely empty line, generally sorts to the top in A to Z mode. Clean your list first with [Remove Extra Spaces](/tools/remove-extra-spaces) and [Remove Empty Lines](/tools/remove-empty-lines) so stray whitespace doesn't distort the order.
+
+### Duplicates stay in the list
+
+Sorting doesn't remove repeats; it just places them next to each other. To keep only unique entries, run [Remove Duplicate Lines](/tools/remove-duplicate-lines) before or after sorting.
+
+### Case sensitivity changes the order
+
+With "Case-sensitive" off, capitalization is ignored when comparing, which is what most people expect from an alphabetized list. Turn it on when capitalization is meaningful, for example to keep "Apple" (the brand) and "apple" (the fruit) clearly distinguished in technical lists.
+
+## Best practices for clean, sorted lists
+
+- **Normalize first.** Trim spaces and remove blank lines before sorting.
+- **Deduplicate.** Combine sorting with duplicate removal to build tidy master lists.
+- **Keep a copy of the original order** if the sequence carried meaning, such as priority or date.
+- **Sort by length to audit copy.** Sorting a batch of page titles longest first is a quick way to find candidates that may get truncated in search results.
+
+## FAQ
+
+### How do I sort a list in reverse alphabetical order?
+
+Choose "Alphabetical (Z to A)" in the Sort by menu. If you instead want to flip the current order of a list without sorting it, use [Reverse Lines](/tools/reverse-lines).
+
+### Can I sort a comma-separated list?
+
+The tool sorts by line, so put each item on its own line first. Replace each comma with a line break in a text editor, sort, then join the items again if needed.
+
+### Does sorting change the content of each line?
+
+No. Each line's text is left exactly as it was. Only the order of the lines changes.
+
+### How can I check how many items my list has?
+
+The "Lines sorted" metric shows the total. For a breakdown of non-empty, empty and unique lines, use the [Line Counter](/tools/line-counter).
+
+## Sort your list now
+
+Whether you're alphabetizing keywords or ranking headlines by length, sorting by hand is a waste of time. Paste your list into the [Sort Lines tool](/tools/sort-lines), choose a mode, and copy the result.

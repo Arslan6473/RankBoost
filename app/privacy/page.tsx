@@ -6,7 +6,7 @@ import { Prose } from "@/components/shared/prose";
 
 export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy",
-  description: "How SEO Text Tools handles your data. Spoiler: the tools run in your browser and we don't collect your content.",
+  description: "How RankBoost handles your data. Spoiler: the tools run in your browser and we don't collect your content.",
   path: "/privacy",
 });
 

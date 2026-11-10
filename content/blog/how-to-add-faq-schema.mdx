@@ -1,0 +1,125 @@
+---
+title: "How to Add FAQ Schema to Your Page: A Step-by-Step Guide"
+description: "Learn how to add FAQ schema to any page with FAQPage JSON-LD: the right format, where to paste the code, how to test it, and the mistakes to avoid."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["SEO", "Structured Data", "Schema Markup"]
+excerpt: "FAQ schema tells search engines which parts of your page are questions and answers. Here's how to write it, add it and validate it without errors."
+readingTime: "6 min read"
+tool: "faq-generator"
+keywords: ["how to add faq schema", "faq schema markup", "faqpage json-ld", "faq structured data", "faq schema example", "add faq schema without plugin"]
+---
+
+To add FAQ schema to a page, you write your questions and answers as FAQPage structured data in JSON-LD format, paste that script into the page's HTML, and validate it with a structured data testing tool. The fastest way to get valid markup is to generate it from your existing Q&A content rather than writing the JSON by hand.
+
+This guide walks through how to add FAQ schema step by step using the free [FAQ Schema Generator](/tools/faq-generator), plus the rules that keep your markup clean and eligible for search features.
+
+## What FAQ schema is
+
+FAQ schema is a type of structured data from Schema.org. It uses the `FAQPage` type, which contains a list of `Question` items, each with an `acceptedAnswer`. Search engines read this markup to understand that a section of your page is a set of questions with definitive answers.
+
+JSON-LD is the format Google recommends for structured data. It lives in a single script block, separate from your visible HTML, so you can add or update it without touching your page layout.
+
+## Why FAQ structured data still matters
+
+FAQ markup was once a popular way to win expanded FAQ rich results in Google. Google has since limited those rich results mainly to well-known, authoritative government and health websites, so most sites should not expect the dropdown display.
+
+That doesn't make FAQ structured data pointless. It still:
+
+- Describes your content explicitly to search engines and other machine readers
+- Encourages you to write tight, self-contained answers, which is good for featured snippets and AI-generated summaries
+- Keeps your Q&A content organized and consistent across pages
+
+Treat it as a clarity signal, not a ranking shortcut.
+
+## How to add FAQ schema step by step
+
+### Step 1: Write the questions and answers on the page
+
+Start with the visible content. Every question you mark up must appear on the page where users can read it. Pick questions your audience genuinely asks, and answer each in a few clear sentences.
+
+### Step 2: Format your Q&A pairs
+
+Open the [FAQ Schema Generator](/tools/faq-generator) and enter one pair per line, with the question and answer separated by a double colon:
+
+```
+What is SEO? :: SEO is the practice of improving your site to rank higher in search results.
+Is SEO free? :: Organic SEO doesn't require ad spend, but it takes time and effort.
+```
+
+Lines without a `::` separator, or with an empty question or answer, are skipped, so you can tidy your list without breaking the output. The tool also shows how many questions it picked up, which is a quick way to confirm nothing was dropped.
+
+### Step 3: Copy the generated JSON-LD
+
+The generator outputs a complete script block, already wrapped in the correct script tag. A two-question FAQ schema example looks like this:
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO is the practice of improving your site to rank higher in search results."
+      }
+    }
+  ]
+}
+</script>
+```
+
+### Step 4: Paste it into your page
+
+You can place the script in the head or the body of the page. On most platforms you can add FAQ schema without a plugin:
+
+- **Static sites and custom builds:** paste the script into the page template.
+- **WordPress:** use a Custom HTML block in the editor, or your theme's header injection setting.
+- **Hosted builders:** look for a "custom code" or "header code" field in the page settings.
+
+### Step 5: Validate the markup
+
+Run the page URL or code through Google's Rich Results Test or the Schema Markup Validator. Fix any errors before publishing, then monitor the Enhancements reports in Google Search Console over the following weeks.
+
+## Best practices for FAQ schema markup
+
+- **Match the page exactly.** The marked-up questions and answers should mirror the visible text. Hidden or different content can be treated as spammy markup.
+- **Use it for real FAQs only.** Don't mark up product descriptions, ads or user-submitted forum threads as FAQPage. Community Q&A has its own type, `QAPage`.
+- **Avoid duplicates across the site.** If the same FAQ block appears on many pages, consider marking it up on just one.
+- **Keep answers self-contained.** Each answer should make sense on its own, without "see above" references.
+- **Combine with other schema where relevant.** An article page can carry both Article and FAQPage markup. The [Schema Markup Generator](/tools/schema-generator) helps with the other types.
+
+## Common mistakes to avoid
+
+| Mistake | Why it's a problem | Fix |
+| --- | --- | --- |
+| Marking up questions that aren't visible | Violates structured data guidelines | Only mark up on-page FAQs |
+| Promotional answers | Reads as advertising, not answers | Answer the question directly |
+| Broken JSON from manual edits | Invalid markup is ignored | Regenerate instead of hand-editing |
+| Multiple FAQPage blocks on one page | Can confuse parsers | Combine into a single block |
+
+## FAQ
+
+### Can I add FAQ schema to a blog post?
+
+Yes. If the post has a genuine FAQ section visible to readers, you can add FAQPage markup for that section alongside any Article markup the page already uses.
+
+### Do answers in FAQ schema support links or formatting?
+
+Google allows a limited set of HTML tags inside answer text, such as links, lists and paragraphs. Plain text is the safest choice and is what most FAQs need.
+
+### Will adding FAQ schema improve my rankings?
+
+Structured data is not a direct ranking factor. It helps search engines understand your content, and the act of writing clear Q&A often improves the page itself.
+
+### How often should I update my FAQ markup?
+
+Update it whenever you change the visible FAQ text, so the two never drift apart. Regenerating the whole block is easier than patching individual entries.
+
+## Generate your FAQ schema now
+
+Adding FAQ schema takes a few minutes once your questions are written. Pair it with a well-organized page outline from the [Heading Structure Checker](/tools/heading-checker) and a strong snippet from the [Meta Description Generator](/tools/meta-description-generator), and read the [on-page SEO guide](/blog/on-page-seo-guide) for the bigger picture. When you're ready, paste your Q&A pairs into the [FAQ Schema Generator](/tools/faq-generator) and copy the JSON-LD straight into your page.

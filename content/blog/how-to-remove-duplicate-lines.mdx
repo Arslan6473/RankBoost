@@ -1,0 +1,110 @@
+---
+title: "How to Remove Duplicate Lines From a List (Keep Original Order)"
+description: "Learn how to remove duplicate lines from any list while keeping the original order. Dedupe keywords, emails and logs in seconds with a free online tool."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["Text", "Lists", "Text Cleanup"]
+excerpt: "Repeated lines clutter keyword lists, email lists and logs. Here's how to keep only the first occurrence of each line, with or without case sensitivity."
+readingTime: "5 min read"
+tool: "remove-duplicate-lines"
+keywords: ["how to remove duplicate lines", "deduplicate a list", "remove duplicates from list", "unique lines only", "dedupe keyword list", "case-insensitive duplicate removal"]
+---
+
+To remove duplicate lines from a list, keep the first time each line appears and drop every later repeat. The free [Remove Duplicate Lines tool](/tools/remove-duplicate-lines) does exactly that: paste your list, and it returns only unique lines in their original order, with an optional case-insensitive mode so "Apple" and "apple" count as the same entry.
+
+Here's why deduplication matters, how to do it correctly, and the small details that trip people up.
+
+## What it means to deduplicate lines
+
+Deduplicating lines means treating each line as one item and removing any item that has already appeared. Given this list:
+
+```
+apple
+banana
+apple
+cherry
+banana
+apple
+```
+
+the deduplicated result is:
+
+```
+apple
+banana
+cherry
+```
+
+Order is preserved. The first "apple" stays at the top, and the later copies disappear. That's different from tools that sort the list first, which can scramble an order you care about.
+
+## Why removing duplicate lines matters
+
+Duplicates sneak into almost every list that gets merged, exported or pasted together. Cleaning them up helps with:
+
+- **Keyword research.** Combining exports from several sources creates lots of overlap. A deduplicated keyword list is easier to review and to group, for example with the [Keyword Cluster Generator](/tools/keyword-cluster-generator).
+- **Email and contact lists.** Sending the same message twice to one address looks unprofessional and can annoy subscribers.
+- **Log files.** Repeated messages bury the unique events you're actually looking for.
+- **URL lists and redirects.** Duplicate entries make audits and redirect maps harder to manage.
+
+## How to remove duplicate lines with RankBoost
+
+The [Remove Duplicate Lines tool](/tools/remove-duplicate-lines) runs in your browser. Follow these steps:
+
+1. **Paste your list**, one item per line.
+2. **Decide on case matching.** By default, matching is exact, so "SEO" and "seo" are treated as different lines. Turn on "Case-insensitive matching" to treat them as duplicates.
+3. **Review the output** and the two metrics: "Duplicates removed" and "Unique lines".
+4. **Copy the unique list** into your spreadsheet, CMS or email tool.
+
+When case-insensitive matching is on, the version that appears first is the one kept. If your list contains "Running Shoes" on line 2 and "running shoes" on line 9, the output keeps "Running Shoes".
+
+## Common mistakes that leave duplicates behind
+
+### Trailing and repeated spaces
+
+Lines are compared exactly, character for character. "blue widgets" and "blue widgets " (with a trailing space) are different strings, so both survive. Run your list through [Remove Extra Spaces](/tools/remove-extra-spaces) first to trim every line and collapse repeated spaces.
+
+### Blank lines
+
+Empty lines are lines too. After deduplication, only the first blank line remains, which can leave a stray gap in the middle of your list. Use [Remove Empty Lines](/tools/remove-empty-lines) to delete it.
+
+### Near-duplicates
+
+The tool removes exact repeats (optionally ignoring case). It won't merge "running shoe" with "running shoes" or "colour" with "color". Those are judgment calls you'll want to review by hand.
+
+### Duplicate sentences inside paragraphs
+
+This tool works line by line. If you're hunting for repeated sentences inside prose, the [Duplicate Sentence Finder](/tools/duplicate-sentence-finder) is a better fit.
+
+## A reliable list-cleaning workflow
+
+| Step | Tool | What it fixes |
+| --- | --- | --- |
+| 1 | Remove Extra Spaces | Stray spaces that hide duplicates |
+| 2 | Remove Empty Lines | Blank rows |
+| 3 | Remove Duplicate Lines | Repeated entries |
+| 4 | Sort Lines (optional) | Puts the list in A to Z order |
+
+Sorting is optional because it changes order. If the sequence matters, such as a priority list or a log, stop after step 3. If you want an alphabetized list, finish with [Sort Lines](/tools/sort-lines).
+
+## FAQ
+
+### Should I sort before or after removing duplicates?
+
+Either order gives you the same set of unique lines. Removing duplicates first keeps your original order as an option, so you can decide afterward whether sorting is worth it.
+
+### Can I see which lines were duplicates?
+
+The tool reports how many duplicates were removed and how many unique lines remain. To compare, use the [Line Counter](/tools/line-counter) on your original list: it shows total and unique line counts side by side.
+
+### Is case-insensitive matching always better?
+
+Not always. For keywords and email addresses it's usually what you want, since case rarely changes meaning there. For things like file paths, product codes or passwords, case can matter, so keep exact matching on.
+
+### Is my list uploaded anywhere?
+
+No. Deduplication happens locally in your browser, which makes it suitable for lists you'd rather not send to a server.
+
+## Clean up your list now
+
+Duplicate lines are easy to create and slow to remove by hand. Paste your list into the [Remove Duplicate Lines tool](/tools/remove-duplicate-lines), choose exact or case-insensitive matching, and copy a clean, unique list in seconds.

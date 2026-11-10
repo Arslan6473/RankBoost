@@ -1,0 +1,101 @@
+---
+title: "How to Count Lines in Text: Total, Empty and Unique Line Counts"
+description: "Learn how to count lines in text, including total, non-empty, empty and unique lines. Check list sizes, code and data files instantly with a free line counter."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["Text", "Lists", "Counting"]
+excerpt: "Before you import a list or paste a data file, it helps to know exactly how many lines it has. Here's how to count total, empty and unique lines in seconds."
+readingTime: "5 min read"
+tool: "line-counter"
+keywords: ["how to count lines in text", "count number of lines", "count non-empty lines", "count unique lines", "line count online", "how many lines in a list"]
+---
+
+To count lines in text, split it at every line break and count the pieces. The free [Line Counter](/tools/line-counter) does this the moment you paste, and goes a step further: it reports total lines, non-empty lines, empty lines and unique lines, so you can see not just how long a list is but how clean it is.
+
+Here's what each number means, when line counts are useful, and how to read the results.
+
+## What counts as a line
+
+A line is any run of text that ends with a line break, or the last stretch of text at the end of the input. Some details worth knowing:
+
+- **The last line counts** even if there's no line break after it.
+- **Empty lines count** toward the total. A blank line between paragraphs is still a line.
+- **A trailing line break adds one empty line.** If your text ends with a line break, the tool sees an empty line after it, so the total and the empty count both go up by one.
+- **Long lines that wrap on screen are still one line.** Visual wrapping in a text box doesn't create new lines; only actual line breaks do.
+
+## What the line counter reports
+
+| Metric | What it tells you |
+| --- | --- |
+| Total lines | Every line, including empty ones |
+| Non-empty lines | Lines with at least one visible character |
+| Empty lines | Lines that are blank or contain only spaces or tabs |
+| Unique lines | Distinct lines, after trimming leading and trailing spaces |
+
+For example, this list:
+
+```
+apple
+banana
+
+apple
+cherry
+```
+
+has 5 total lines, 4 non-empty lines, 1 empty line and 4 unique lines (apple, banana, cherry and the blank line).
+
+## When counting lines is useful
+
+- **Before a data import.** Many tools and platforms have row limits, and a quick count confirms your list fits.
+- **Checking a list for duplicates.** If unique lines are fewer than non-empty lines, you have repeats to clean up.
+- **Spotting stray blank lines.** A non-zero empty count in a list that should have none points to gaps left by copy-paste or exports.
+- **Code and config files.** Get a quick sense of file length, or how much of a snippet is blank spacing.
+- **Writing to a format.** Poems, lyrics, scripts and some ad formats are measured in lines rather than words.
+- **Verifying a transformation.** Count before and after sorting or reversing to make sure no lines went missing.
+
+## How to count lines with RankBoost
+
+The [Line Counter](/tools/line-counter) runs entirely in your browser:
+
+1. **Paste your text** into the input box.
+2. **Read the four metrics**: total, non-empty, empty and unique lines.
+3. **Edit and recheck.** The counts update as you change the text.
+
+There are no settings: paste and the numbers appear. Nothing is uploaded, so it's safe to use with internal lists and logs.
+
+## Using line counts to clean up a list
+
+The counts are most useful as a checklist for cleanup:
+
+1. **Empty lines above zero?** Remove them with [Remove Empty Lines](/tools/remove-empty-lines).
+2. **Unique lines fewer than non-empty lines?** Remove repeats with [Remove Duplicate Lines](/tools/remove-duplicate-lines).
+3. **Recount.** Ideally total, non-empty and unique lines now match.
+
+One caveat: the unique count trims leading and trailing spaces before comparing, while Remove Duplicate Lines compares lines exactly. If a few "duplicates" survive deduplication, they probably differ only by spacing. Run the list through [Remove Extra Spaces](/tools/remove-extra-spaces) first and they'll match.
+
+## Line count vs word count
+
+Line counts and word counts answer different questions. A list of 200 keywords might be 200 lines but 500 words, while a 1,000-word article could be just 15 lines if each paragraph is a single line. Use the line count for lists, data and code, and the [Word Counter](/tools/word-counter) for prose and articles.
+
+## FAQ
+
+### Why is my line count one higher than expected?
+
+Your text most likely ends with a line break, which creates an empty final line. Check the empty lines metric; if it shows one and you didn't add a blank line yourself, that's the cause.
+
+### Do lines with only spaces count as empty?
+
+Yes. A line containing nothing but spaces or tabs is counted as empty, not as a non-empty line.
+
+### Can I count lines in a CSV or spreadsheet export?
+
+Yes. Paste the file contents and the total line count equals the number of rows, including any header row. Remember to subtract the header if you only want data rows.
+
+### Does it count lines that wrap on screen?
+
+No. Only real line breaks start a new line. A long paragraph that wraps across several visual rows counts as one line.
+
+## Count your lines now
+
+Whether you're sizing a list, auditing a data file or checking for duplicates, the [Line Counter](/tools/line-counter) gives you every line count you need in a single paste.

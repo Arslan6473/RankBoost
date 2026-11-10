@@ -1,0 +1,116 @@
+---
+title: "Open Graph Meta Tags: A Practical Guide to Better Social Shares"
+description: "Learn what Open Graph meta tags are, which og: tags you need, ideal image sizes and common mistakes, then generate your tags free with a live preview."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["SEO", "Social Media", "Meta Tags"]
+excerpt: "Open Graph tags control how your links look when shared on Facebook, LinkedIn, Slack and more. Here's which tags to use and how to get them right."
+readingTime: "6 min read"
+tool: "open-graph-generator"
+keywords: ["open graph meta tags", "og tags", "og image size", "how to add open graph tags", "og meta tags example", "social share preview"]
+---
+
+Open Graph meta tags are snippets of HTML that tell social platforms what title, description, image and URL to show when someone shares your page. Without them, platforms like Facebook, LinkedIn and Slack have to guess, which often results in a missing image or the wrong text. You can create a full set of og tags, with a live share preview, using the free [RankBoost Open Graph Generator](/tools/open-graph-generator).
+
+## What Open Graph is
+
+Open Graph is a protocol originally introduced by Facebook that lets any web page describe itself as a rich object. It's now widely used: many social networks, messaging apps and collaboration tools read Open Graph tags to build link previews.
+
+The tags sit in the head section of your page and use a property attribute that starts with og:
+
+```html
+<meta property="og:title" content="Best Running Shoes for 2026" />
+<meta property="og:description" content="Discover the best running shoes for 2026 with free shipping and easy returns." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://acme.com/running-shoes" />
+<meta property="og:image" content="https://acme.com/og.png" />
+```
+
+## Why Open Graph tags matter
+
+Open Graph tags aren't a search ranking factor, but they shape how your content looks wherever it's shared. A link with a clear headline and an eye-catching image is more likely to be noticed and clicked than a bare URL or a preview with a random image pulled from your page.
+
+They also give you consistency. Instead of each platform scraping your page differently, you define one set of values that most of them will use.
+
+## The essential og tags
+
+| Tag | What it does | Tip |
+| --- | --- | --- |
+| og:title | The headline shown in the preview | Keep it under about 60 characters |
+| og:description | The supporting text below the title | One or two clear sentences |
+| og:type | The kind of content | website, article and product are common |
+| og:url | The canonical address of the page | Use the full, clean URL |
+| og:image | The image shown in the preview | 1200 × 630px is a widely used size |
+
+There are additional tags for things like site name, locale and image dimensions, but these five cover the core of most share previews.
+
+## How to create Open Graph tags with RankBoost
+
+The [Open Graph Generator](/tools/open-graph-generator) builds the five essential tags from a simple form:
+
+1. **Enter your og:title.** This can match your page title or be written specifically for social audiences.
+2. **Write your og:description.** A short summary of what readers will get. You can adapt your meta description from the [Meta Description Generator](/tools/meta-description-generator).
+3. **Add the og:url.** Use the page's canonical address.
+4. **Add the og:image URL.** Use a full, absolute URL to an image hosted on your site.
+5. **Choose the og:type.** Select website, article or product.
+6. **Check the preview card.** The tool shows a Facebook-style preview with your image, title, description and domain.
+7. **Copy the HTML** and paste it into the head section of your page or your CMS's custom head field.
+
+After publishing, many platforms offer their own debugging or post-inspection tools that let you refresh cached previews, which is useful if you change a tag after a link has already been shared.
+
+## Open Graph best practices
+
+### Use a dedicated share image
+
+Design an image specifically for sharing rather than relying on whatever appears first on the page. A size of 1200 × 630 pixels (roughly a 1.91:1 ratio) is commonly recommended and displays well on most platforms. Keep important text and logos away from the edges, since some platforms crop images.
+
+### Use absolute URLs
+
+Both og:url and og:image should be full addresses, including https. Relative paths often fail because the platform fetching your page can't resolve them.
+
+### Keep og:url consistent with your canonical
+
+Your og:url should match the canonical version of the page. If you haven't set one up, the [Canonical Tag Generator](/tools/canonical-generator) can create it.
+
+### Write for the feed
+
+Social audiences are scrolling, not searching. A slightly more conversational og:title can work well, as long as it still accurately describes the page.
+
+### Avoid double quotes in content
+
+Double quotation marks inside a content attribute can break the tag. Use single quotes or rephrase the text.
+
+## Common Open Graph mistakes
+
+- **Missing og:image**, which leaves platforms to pick an image themselves or show none.
+- **Images that are too small**, which may display as a tiny thumbnail instead of a large card.
+- **Using the same tags on every page**, so every share looks identical.
+- **Blocking the image** from crawlers, which prevents platforms from fetching it.
+- **Forgetting to update tags** when the page content changes.
+
+## Open Graph and Twitter cards
+
+X (formerly Twitter) has its own set of tags called Twitter cards. It can fall back to Open Graph tags when its own are missing, but setting both gives you more control, including the card style. Our [Twitter Card Generator](/tools/twitter-card-generator) creates those tags with a preview of how your link will look in a post.
+
+## FAQ
+
+### Do I need different og tags for every page?
+
+Yes, ideally. Each page should have its own title, description, URL and, where possible, image so that shares accurately reflect the specific content being shared.
+
+### Which og:type should I use for a blog post?
+
+The article type is the usual choice for blog posts and news content. Use website for home and general pages, and product for individual product pages.
+
+### Why isn't my new og:image showing when I share a link?
+
+Platforms cache link previews. If you've recently changed the image, use the platform's sharing or debugging tool to re-fetch the page, and make sure the image URL is public and absolute.
+
+### Can I use a PNG or JPG for og:image?
+
+Both formats are widely supported. Choose whichever gives you good quality at a reasonable file size.
+
+## Make every share count
+
+Open Graph tags take a few minutes to set up and improve how your content looks every time it's shared. Generate yours with the [RankBoost Open Graph Generator](/tools/open-graph-generator), check the preview card, and paste the tags into your page. For a complete set of on-page tags, see our [on-page SEO guide](/blog/on-page-seo-guide).

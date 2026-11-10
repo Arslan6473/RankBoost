@@ -8,7 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export const metadata: Metadata = buildMetadata({
   title: "Search",
-  description: "Search all 50+ tools, articles and FAQs on SEO Text Tools.",
+  description: "Search all 50+ tools, articles and FAQs on RankBoost.",
   path: "/search",
 });
 

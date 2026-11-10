@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Lightbulb, ArrowRight } from "lucide-react";
+import { Lightbulb, ArrowRight, BookOpen } from "lucide-react";
 import {
   getTool,
   getAllToolSlugs,
@@ -9,6 +9,8 @@ import {
   getCategory,
 } from "@/lib/tools/registry";
 import { buildMetadata } from "@/lib/seo";
+import { getPostForTool } from "@/lib/blog";
+import type { ToolDefinition } from "@/types/tool";
 import {
   JsonLd,
   softwareAppJsonLd,
@@ -32,6 +34,13 @@ export function generateStaticParams() {
   return getAllToolSlugs().map((slug) => ({ slug }));
 }
 
+/** Prefer the fuller intro copy when it fits a SERP snippet (~160 chars). */
+function metaDescription(tool: ToolDefinition): string {
+  if (tool.longDescription.length <= 160) return tool.longDescription;
+  const withSuffix = `${tool.description} Free online, no signup required.`;
+  return withSuffix.length <= 160 ? withSuffix : tool.description;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -41,9 +50,10 @@ export async function generateMetadata({
   const tool = getTool(slug);
   if (!tool) return buildMetadata({ title: "Tool not found" });
   return buildMetadata({
-    title: tool.title,
-    description: tool.description,
+    title: `${tool.title} — Free Online Tool`,
+    description: metaDescription(tool),
     path: `/tools/${tool.slug}`,
+    image: `/tools/${tool.slug}/opengraph-image`,
     keywords: tool.keywords,
   });
 }
@@ -59,6 +69,7 @@ export default async function ToolPage({
 
   const category = getCategory(tool.category);
   const related = getRelatedTools(tool);
+  const guide = getPostForTool(tool.slug);
   const Icon = tool.icon;
   const path = `/tools/${tool.slug}`;
 
@@ -139,6 +150,24 @@ export default async function ToolPage({
                 ))}
               </div>
             </div>
+          )}
+
+          {guide && (
+            <Link
+              href={`/blog/${guide.slug}`}
+              className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-soft transition-colors hover:border-primary/50"
+            >
+              <BookOpen className="mt-0.5 size-5 shrink-0 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  The complete guide
+                </div>
+                <div className="mt-1 font-semibold group-hover:text-primary">
+                  {guide.title}
+                </div>
+                <p className="mt-1 text-sm text-muted-foreground">{guide.excerpt}</p>
+              </div>
+            </Link>
           )}
 
           {tool.seoContent && tool.seoContent.length > 0 && (

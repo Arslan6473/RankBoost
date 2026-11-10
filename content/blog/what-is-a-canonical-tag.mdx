@@ -1,0 +1,123 @@
+---
+title: "What Is a Canonical Tag? How to Use rel=canonical Correctly"
+description: "What is a canonical tag? Learn how rel=canonical works, when to use it, common mistakes, and how to generate a correct canonical link tag in seconds."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["SEO", "Technical SEO", "Duplicate Content"]
+excerpt: "Canonical tags tell search engines which version of a page is the main one. Here's how they work, when you need them and how to avoid common mistakes."
+readingTime: "6 min read"
+tool: "canonical-generator"
+keywords: ["what is a canonical tag", "rel canonical", "canonical url", "how to use canonical tags", "duplicate content seo", "self-referencing canonical"]
+---
+
+A canonical tag is a small piece of HTML that tells search engines which URL is the main, preferred version of a page when the same or very similar content is available at more than one address. It uses the rel=canonical attribute and goes in the head section of the page. You can create one instantly with the free [RankBoost Canonical Tag Generator](/tools/canonical-generator).
+
+## What a canonical tag looks like
+
+A canonical tag is a single line of HTML:
+
+```html
+<link rel="canonical" href="https://example.com/blog/seo-guide" />
+```
+
+The href value is the canonical URL — the address you want search engines to treat as the original. Every page that shares the same content can point to that one URL.
+
+## Why canonical tags matter
+
+Duplicate and near-duplicate URLs are surprisingly common, and they're often created without anyone noticing. A single product page might be reachable at:
+
+- `https://example.com/shoes/trail-runner`
+- `https://example.com/shoes/trail-runner?color=blue`
+- `https://example.com/sale/trail-runner`
+- `http://example.com/shoes/trail-runner`
+
+To a person, these are the same page. To a search engine, they can look like separate URLs with identical content. That can lead to several problems:
+
+- **Split signals.** Links and other signals may be spread across several versions instead of consolidated on one.
+- **The wrong URL in results.** A search engine might show a parameter-filled URL instead of your clean one.
+- **Wasted crawling.** Crawlers spend time on duplicate URLs instead of your new or updated pages.
+
+A canonical tag helps solve these issues by indicating which version you prefer. It's worth knowing that Google treats the canonical tag as a strong hint, not a strict command. If other signals conflict, it may choose a different canonical.
+
+## When to use a canonical tag
+
+Common situations where canonical tags help include:
+
+- **URL parameters** for tracking, sorting or filtering.
+- **The same product in multiple categories**, creating several paths to one page.
+- **HTTP and HTTPS or www and non-www versions** that both resolve (redirects are usually the better fix, with canonicals as backup).
+- **Syndicated content**, where your article is republished on another site that agrees to point a canonical back to you.
+- **Printer-friendly or AMP-style versions** of a page.
+
+## Self-referencing canonicals
+
+A page can, and usually should, point its canonical to itself. This is called a self-referencing canonical. It makes your preference explicit, so if someone links to your page with tracking parameters attached, search engines still get a clear signal about the clean URL.
+
+## How to create a canonical tag with RankBoost
+
+The [Canonical Tag Generator](/tools/canonical-generator) keeps things simple:
+
+1. **Decide on the canonical URL.** This is the single preferred address for the content. Use the clean version, without tracking parameters.
+2. **Enter it in the Canonical URL field.** Use a full, absolute URL including the protocol, such as `https://`.
+3. **Copy the generated tag.** The tool outputs a ready-to-use link element with your URL.
+4. **Paste it into the head section** of every version of the page that should point to that URL, including the canonical page itself.
+5. **Check it after publishing.** View the page source or use a URL inspection tool in your search console to confirm the tag is present and correct.
+
+If your CMS or framework has a built-in canonical setting, use that instead of adding a second tag manually, and use the generator to double-check the format.
+
+## Canonical tag best practices
+
+### Use absolute URLs
+
+Always include the full address, with protocol and domain. Relative URLs are more prone to errors, especially across staging and live environments.
+
+### Use only one canonical per page
+
+Multiple canonical tags with different URLs send mixed signals, and search engines may ignore them all. Check that your theme, plugins and templates aren't each adding their own.
+
+### Point to an indexable page
+
+The canonical URL should return a normal, successful response, be crawlable and not carry a noindex tag. Pointing to a redirected, blocked or broken URL undermines the signal.
+
+### Keep signals consistent
+
+Your internal links, XML sitemap and canonical tags should all point to the same preferred URL. Listing non-canonical URLs in a sitemap creates conflicting hints. The same goes for structured data: if you add JSON-LD with the [Schema Markup Generator](/tools/schema-generator), use the canonical URL in its url field.
+
+## Common canonical mistakes
+
+- **Canonicalising every page to the homepage.** This tells search engines all your pages are duplicates of one, which can stop them from being indexed properly.
+- **Pointing paginated pages to page one** when they contain different content.
+- **Mixing canonical and noindex** on the same page, which sends contradictory instructions.
+- **Using canonicals instead of redirects** when an old URL should simply no longer exist.
+- **Blocking the canonical URL in robots.txt**, which prevents crawlers from confirming it. Our [Robots.txt Generator](/tools/robots-txt-generator) can help you review your crawl rules.
+
+## Canonical tag vs 301 redirect
+
+| | Canonical tag | 301 redirect |
+| --- | --- | --- |
+| Visitors | Can still view every version | Sent automatically to the new URL |
+| Search engines | Receive a strong hint | Receive a clear signal the page has moved |
+| Best for | Duplicates that need to stay accessible | Pages that have permanently moved |
+
+## FAQ
+
+### Do canonical tags work across different domains?
+
+Yes. Cross-domain canonicals are commonly used for syndicated content, where a partner site republishes your article and points the canonical back to your original URL.
+
+### Is a canonical tag the same as noindex?
+
+No. Noindex asks search engines not to include a page in results. A canonical tag says another URL is the preferred version and helps consolidate signals there.
+
+### Can I add a canonical tag in an HTTP header?
+
+Yes, for non-HTML files such as PDFs, a canonical can be sent as a Link HTTP header. For regular web pages, the HTML link element is the most common approach.
+
+### How do I know if Google respects my canonical?
+
+URL inspection in Google Search Console shows both the canonical you declared and the one Google selected. If they differ, check for conflicting signals like internal links or sitemap entries.
+
+## Get your canonicals right
+
+Canonical tags are small, but they help search engines understand which URLs really matter on your site. Use the [RankBoost Canonical Tag Generator](/tools/canonical-generator) to create a correctly formatted tag in seconds, then keep your sitemap, internal links and social tags from the [Open Graph Generator](/tools/open-graph-generator) consistent with it. For more technical fundamentals, read our [SEO basics guide](/blog/seo-basics).

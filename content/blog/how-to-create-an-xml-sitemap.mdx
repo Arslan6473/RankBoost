@@ -1,0 +1,133 @@
+---
+title: "How to Create an XML Sitemap: Format, Limits and Submission"
+description: "Learn how to create an XML sitemap step by step: what to include, the format, size limits and how to submit it to Google. Generate yours free from a URL list."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["SEO", "Technical SEO", "Sitemaps"]
+excerpt: "An XML sitemap helps search engines find your important pages. Here's how to build one, what belongs in it and how to submit it to Google."
+readingTime: "6 min read"
+tool: "sitemap-generator"
+keywords: ["how to create an xml sitemap", "xml sitemap format", "submit sitemap to google", "sitemap.xml example", "sitemap best practices", "sitemap size limit"]
+---
+
+To create an XML sitemap, gather the canonical, indexable URLs you want search engines to find, list each one inside a url entry in a sitemap.xml file, upload it to your site and submit it in Google Search Console. If your CMS doesn't build one automatically, the free [RankBoost XML Sitemap Generator](/tools/sitemap-generator) turns a pasted list of URLs into a valid sitemap in seconds.
+
+## What an XML sitemap is
+
+An XML sitemap is a file that lists the URLs on your site that you want search engines to know about. It follows the sitemaps.org protocol, which major search engines support. Each entry includes the page's address and can include optional details such as how often it changes.
+
+A minimal sitemap looks like this:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
+```
+
+## Why an XML sitemap matters
+
+Search engines mainly discover pages by following links. A sitemap gives them an additional, direct list of the URLs you care about. It's especially useful for:
+
+- **New sites** with few external links.
+- **Large sites** where some pages are several clicks from the homepage.
+- **Sites with frequently added content**, such as blogs and online shops.
+- **Pages with weak internal linking** that crawlers might otherwise miss.
+
+A sitemap doesn't guarantee that every URL will be crawled or indexed, but it helps search engines discover them and understand which pages you consider important.
+
+## What to include and what to leave out
+
+Include URLs that are:
+
+- Canonical (the preferred version of each page)
+- Indexable, without a noindex tag
+- Returning a normal, successful response
+- Useful for searchers to land on
+
+Leave out URLs that are:
+
+- Redirected or broken
+- Duplicates or parameter variations
+- Blocked in robots.txt
+- Thin utility pages such as login, cart or internal search results
+
+## How to create an XML sitemap with RankBoost
+
+The [XML Sitemap Generator](/tools/sitemap-generator) works from a plain list of URLs:
+
+1. **Collect your URLs.** Export them from your CMS, a crawler or a spreadsheet.
+2. **Paste them into the tool, one per line.** Only lines starting with http:// or https:// are included, so stray notes or blank lines are ignored automatically.
+3. **Choose a change frequency.** Options are always, daily, weekly, monthly and yearly. The same value is applied to every URL.
+4. **Set a priority** between 0.0 and 1.0. Again, this is applied to every entry.
+5. **Check the URL count.** The tool shows how many valid URLs it found, so you can confirm nothing was missed.
+6. **Copy or download the XML.** Ampersands in URLs are escaped for you so the file stays valid.
+7. **Name the file sitemap.xml** and upload it to your site's root directory.
+
+Because one changefreq and priority value is applied to the whole list, you can create separate sitemaps for different sections if you want different values, such as one for blog posts and one for static pages.
+
+## How to submit your sitemap to Google
+
+1. Upload the file so it's reachable, for example at `https://example.com/sitemap.xml`.
+2. Open Google Search Console and select your property.
+3. Go to the Sitemaps report, enter the sitemap URL and submit it.
+4. Check back for its status and any errors reported.
+
+You should also reference your sitemap in your robots.txt file with a Sitemap line. The [Robots.txt Generator](/tools/robots-txt-generator) adds this for you. Bing Webmaster Tools accepts sitemap submissions too.
+
+## XML sitemap best practices
+
+### Respect the size limits
+
+A single sitemap can contain up to 50,000 URLs or 50MB uncompressed. Larger sites should split URLs across several sitemaps and list them in a sitemap index file.
+
+### Keep it in sync with your canonicals
+
+Every URL in your sitemap should be the canonical version. Conflicting signals between sitemaps and canonical tags make it harder for search engines to choose the right URL. Use the [Canonical Tag Generator](/tools/canonical-generator) to set canonicals on your pages.
+
+### Use clean URLs
+
+Short, readable URLs are easier to manage in a sitemap and look better in search results. When creating new pages, the [Slug Generator](/tools/slug-generator) can help you produce consistent, hyphenated slugs.
+
+### Don't rely on changefreq and priority
+
+These fields are optional hints. Google has said it largely ignores them, though other search engines may use them. An accurate list of URLs matters far more.
+
+### Update it when content changes
+
+Add new pages and remove deleted ones. A stale sitemap full of broken or redirected URLs sends poor signals.
+
+## Common sitemap mistakes
+
+- **Including noindex or redirected URLs**, which contradicts your other signals.
+- **Mixing HTTP and HTTPS** or www and non-www versions.
+- **Forgetting to submit or reference it**, so search engines may not find it quickly.
+- **Listing every possible URL**, including filters and tag pages with little unique value.
+- **Letting it go out of date** after a site migration.
+
+## FAQ
+
+### Do small websites need an XML sitemap?
+
+A small site with good internal linking can often be crawled fully without one. Even so, a sitemap is quick to create and helps you monitor indexing in Search Console, so it's usually worth having.
+
+### Should I add lastmod dates to my sitemap?
+
+Google has said it uses lastmod when the dates are consistently accurate. The RankBoost generator doesn't add lastmod, so if you want it, add accurate dates manually or let your CMS generate them.
+
+### Can I have more than one sitemap?
+
+Yes. Many sites split sitemaps by content type and combine them with a sitemap index file, which you submit in place of each individual file.
+
+### What's the difference between an XML sitemap and an HTML sitemap?
+
+An XML sitemap is written for search engines. An HTML sitemap is a regular page that lists links for human visitors. They serve different audiences and can be used together.
+
+## Build your sitemap now
+
+An accurate XML sitemap is one of the simplest technical SEO wins. Paste your URLs into the [RankBoost XML Sitemap Generator](/tools/sitemap-generator), download the file, upload it to your root directory and submit it in Search Console. For more foundational tips, read our [SEO basics guide](/blog/seo-basics).

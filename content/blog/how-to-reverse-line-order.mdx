@@ -1,0 +1,111 @@
+---
+title: "How to Reverse Line Order in Text: Flip Lists, Logs and Chats"
+description: "Learn how to reverse line order in any text so the last line comes first. Flip logs, chat exports and chronological lists instantly with a free online tool."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["Text", "Lists", "Formatting"]
+excerpt: "Need the newest entry at the top, or a numbered list counting down? Here's how to flip the order of lines top to bottom without touching their content."
+readingTime: "5 min read"
+tool: "reverse-lines"
+keywords: ["how to reverse line order", "flip lines upside down", "invert line order", "reverse a list", "reverse order of lines in text", "newest first order"]
+---
+
+To reverse line order, take a block of text and rearrange it so the last line becomes the first, the second-to-last becomes the second, and so on. The free [Reverse Lines tool](/tools/reverse-lines) does this in one paste: each line's content stays exactly the same, and only the top-to-bottom order is flipped.
+
+Here's when reversing lines is useful, how to do it, and how it differs from sorting or reversing text.
+
+## What reversing line order does
+
+Reversing line order treats your text as a stack of lines and turns the stack upside down. For example:
+
+```
+Step 1
+Step 2
+Step 3
+Step 4
+```
+
+becomes:
+
+```
+Step 4
+Step 3
+Step 2
+Step 1
+```
+
+Nothing inside each line changes. "Step 4" is still "Step 4"; it simply moves to the top.
+
+## When to flip the order of lines
+
+Reversing is handy whenever data arrives in the opposite order to the one you need:
+
+- **Log files.** Many logs append new entries at the bottom. Flipping them puts the most recent events first.
+- **Chat and comment exports.** Some exports list messages newest first, others oldest first. Reversing lets you read the conversation in whichever order makes sense.
+- **Chronological lists.** Turn an oldest-first changelog or timeline into a newest-first one, or the other way around.
+- **Countdown lists.** Convert a "1 to 10" list into a "10 to 1" countdown for a listicle draft.
+- **Undoing a sort.** If a list was sorted A to Z and you need Z to A, reversing gets you there in one step.
+
+## How to reverse lines with RankBoost
+
+The [Reverse Lines tool](/tools/reverse-lines) runs in your browser with no setup:
+
+1. **Paste your text** into the input box.
+2. **Read the output.** The lines appear in reverse order immediately.
+3. **Check the "Lines reversed" metric** to confirm how many lines were processed.
+4. **Copy the result** and paste it where you need it.
+
+There are no settings to configure, because the operation is simple: the tool splits your text at each line break, flips the order, and joins the lines back together.
+
+## Reverse lines vs sort vs reverse text
+
+These three operations are easy to confuse. Here's how they compare on the same input, "banana / apple / cherry", one item per line:
+
+| Operation | Result | What changes |
+| --- | --- | --- |
+| Reverse lines | cherry / apple / banana | Line order flipped |
+| Sort A to Z | apple / banana / cherry | Lines put in alphabetical order |
+| Reverse text (characters) | yrrehc / elppa / ananab | Characters flipped, so the last line comes first and each word is spelled backwards |
+
+Use [Sort Lines](/tools/sort-lines) when you want a specific order, such as alphabetical or by length. Use reverse lines when you want to keep the existing sequence but run it backwards. Use [Reverse Text](/tools/reverse-text) when you want the characters themselves reversed.
+
+## Tips and common mistakes
+
+### Watch for a trailing line break
+
+If your text ends with a line break, there's technically an empty line at the very end. After reversing, that empty line moves to the top. Trim it off, or run the result through [Remove Empty Lines](/tools/remove-empty-lines).
+
+### Keep multi-line entries together
+
+The tool reverses individual lines. If one log entry or chat message spans several lines, those lines will also be reversed relative to each other. For multi-line entries, join each entry onto a single line first, reverse, and then split them back out if needed.
+
+### Numbered lists keep their numbers
+
+Because line content isn't modified, a numbered list like "1. Intro, 2. Body, 3. Close" becomes "3. Close, 2. Body, 1. Intro". That's perfect for a countdown, but if you want the new top item to be number 1, renumber after reversing.
+
+### Count before and after
+
+To make sure nothing went missing, compare line totals with the [Line Counter](/tools/line-counter). The total should be the same before and after reversing.
+
+## FAQ
+
+### Can I reverse lines in a CSV file?
+
+Yes. Paste the CSV contents and every row will be flipped. Keep in mind that a header row will move to the bottom, so you may want to remove it before reversing and add it back at the top afterward.
+
+### Is reversing lines the same as sorting Z to A?
+
+Only if the list was already sorted A to Z. For an unsorted list, reversing simply flips the current order, while sorting Z to A rearranges it alphabetically.
+
+### Does it work with very long logs?
+
+Yes. Everything runs locally in your browser, so you can paste long logs or exports without sending the data to a server.
+
+### Will blank lines be removed?
+
+No. Blank lines are reversed along with everything else. Remove them separately if you don't want them.
+
+## Flip your lines in one step
+
+Reversing line order by hand is slow and easy to get wrong. Paste your text into the [Reverse Lines tool](/tools/reverse-lines), copy the flipped version, and get back to work.

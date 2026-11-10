@@ -1,0 +1,117 @@
+---
+title: "Heading Structure for SEO: How to Use H1 to H6 Tags Correctly"
+description: "Learn the right heading structure for SEO: one H1, logical H2 to H6 nesting, no skipped levels, and how to audit any page's heading hierarchy in seconds."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["SEO", "On-Page", "Content Structure"]
+excerpt: "Headings are the outline of your page. Here's how to structure H1 to H6 tags so readers, screen readers and search engines can follow your content."
+readingTime: "6 min read"
+tool: "heading-checker"
+keywords: ["heading structure for seo", "h1 to h6 tags", "heading hierarchy", "how many h1 tags per page", "skipped heading levels", "seo headings best practices"]
+---
+
+A good heading structure for SEO uses one H1 that states the page's main topic, H2s for the major sections, and H3 to H6 only to nest subtopics inside those sections, without skipping levels. Think of headings as a table of contents: anyone scanning them should understand what the page covers and how it's organized.
+
+This guide covers the rules of heading hierarchy, common mistakes, and how to audit any page with the free [Heading Structure Checker](/tools/heading-checker).
+
+## What heading tags do
+
+HTML offers six heading levels, from `h1` (most important) to `h6` (least). In Markdown, they're written with one to six hash marks. Headings serve three audiences:
+
+- **Readers** skim headings to decide whether a page answers their question and to jump to the part they need.
+- **Assistive technology** users often navigate pages by heading, so a logical hierarchy is an accessibility requirement, not just a style choice.
+- **Search engines** use headings as one of several signals to understand the topics and structure of a page.
+
+## Why heading hierarchy matters for SEO
+
+Headings aren't a magic ranking lever, but a clear structure supports SEO in practical ways. It makes long content easier to read, which keeps visitors engaged. It helps search engines identify distinct sections that could answer specific queries, sometimes as featured snippets. And it naturally encourages you to cover subtopics thoroughly, which improves topical depth.
+
+## Heading structure rules
+
+### Use one H1 per page
+
+The H1 is the page's main headline and should describe its primary topic, usually including the primary keyword. Google has said multiple H1s won't break anything, but a single H1 keeps the outline unambiguous and is the convention most audits check for.
+
+### Use H2s for main sections
+
+Each H2 should introduce a major part of the page. If you read only the H1 and the H2s, the page's argument or structure should be clear.
+
+### Nest H3 to H6 logically
+
+An H3 belongs under an H2, an H4 under an H3, and so on. Most pages rarely need anything deeper than H3 or H4.
+
+### Don't skip levels
+
+Jumping from an H2 straight to an H4 breaks the outline. Moving back up, for example from an H4 to a new H2, is fine.
+
+### Don't use headings for styling
+
+If you want large or bold text that isn't a section title, use CSS instead of a heading tag. Headings should only mark real sections.
+
+## How to check your heading structure
+
+1. Copy the page's HTML or Markdown. For a live page, you can view source and copy the content area.
+2. Paste it into the [Heading Structure Checker](/tools/heading-checker). It detects HTML heading tags automatically and falls back to Markdown hash headings when no HTML headings are present.
+3. Review the counts for each level, H1 through H6. The H1 count is highlighted when it isn't exactly one.
+4. Read the indented **Outline**. This shows every heading in order, nested by level, so you can scan the structure the way a screen reader user would experience it.
+5. Fix anything in the **Issues** list. The checker flags a missing H1, multiple H1s, and any skipped levels, naming the heading where the jump happens.
+
+## Heading structure example
+
+Here's an outline with two problems, followed by the fixed version.
+
+```
+H1: Ultimate SEO Guide
+  H2: What Is SEO
+  H2: On-Page SEO
+      H4: Title Tags          (skipped level: H2 to H4)
+H1: Technical SEO             (second H1)
+```
+
+```
+H1: Ultimate SEO Guide
+  H2: What Is SEO
+  H2: On-Page SEO
+    H3: Title Tags
+  H2: Technical SEO
+```
+
+## Best practices for SEO headings
+
+- **Write descriptive headings.** "Pricing" is fine for navigation, but "How Much Does a Website Audit Cost" tells readers and search engines more.
+- **Include keywords naturally.** Use your primary keyword in the H1 and related terms in some H2s. Don't force the exact phrase into every heading.
+- **Keep headings concise.** A heading is a signpost, not a paragraph.
+- **Match the promise of your title.** Your H1 and title tag can differ in wording but should describe the same topic. Test title drafts with the [SEO Title Analyzer](/tools/seo-title-analyzer).
+- **Turn question headings into FAQs.** If a section is a list of questions, consider marking it up with the [FAQ Schema Generator](/tools/faq-generator).
+
+## Common heading mistakes
+
+| Mistake | How it happens | Fix |
+| --- | --- | --- |
+| No H1 | Theme uses the logo or a styled div as the headline | Make the page title an H1 |
+| Several H1s | Widgets or sidebars use H1 tags | Change extra H1s to H2 or plain text |
+| Skipped levels | Headings chosen by font size | Pick levels by hierarchy, style with CSS |
+| Headings in footers and sidebars | Template components | Use non-heading elements for widget titles |
+
+## FAQ
+
+### Do heading tags in the navigation or footer count?
+
+Yes. Any heading tag in the HTML is part of the page's outline. If your template uses headings for menus or footer columns, they appear in audits and in screen reader navigation.
+
+### Should every section have the same number of subheadings?
+
+No. Add subheadings where they help readers. A short section may need none, while a detailed one may need several H3s.
+
+### Can I start a page with an H2?
+
+It's better not to. Without an H1, the page lacks a clear top-level heading. Many themes add the H1 automatically from the post title, so check the rendered page rather than just your editor.
+
+### Is heading order more important than keyword use?
+
+They serve different purposes. A logical order helps people and assistive technology follow the page, while keywords signal topic. Get the structure right first, then refine the wording.
+
+## Audit your headings now
+
+A clean heading hierarchy makes content easier to read, navigate and understand. For more on how headings fit into the rest of the page, see the [on-page SEO guide](/blog/on-page-seo-guide). Then paste your page into the free [Heading Structure Checker](/tools/heading-checker) and fix any issues in a few minutes.
