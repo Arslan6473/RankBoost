@@ -7,7 +7,7 @@ import { CtaBanner } from "@/components/shared/cta-banner";
 
 export const metadata: Metadata = buildMetadata({
   title: "Changelog",
-  description: "New tools, improvements and fixes shipped to SEO Text Tools.",
+  description: "New tools, improvements and fixes shipped to RankBoost.",
   path: "/changelog",
 });
 

@@ -1,0 +1,141 @@
+---
+title: "How to Create a Robots.txt File: Rules, Examples and Mistakes"
+description: "Learn how to create a robots.txt file: syntax, User-agent and Disallow rules, sitemap lines, examples and common mistakes. Generate yours free in seconds."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["SEO", "Technical SEO", "Crawling"]
+excerpt: "Robots.txt tells search engine crawlers where they can and can't go on your site. Here's how to write one, with examples and the mistakes to avoid."
+readingTime: "7 min read"
+tool: "robots-txt-generator"
+keywords: ["how to create a robots.txt file", "robots.txt example", "robots.txt disallow", "robots.txt syntax", "robots.txt sitemap", "robots.txt best practices"]
+---
+
+To create a robots.txt file, write a plain text file that names a crawler with a User-agent line, lists the paths it shouldn't crawl with Disallow lines, and optionally points to your XML sitemap — then upload it to the root of your domain. Most sites only need a few lines. The free [RankBoost Robots.txt Generator](/tools/robots-txt-generator) builds a valid file for you from a default policy, a list of paths and your sitemap URL.
+
+## What robots.txt is
+
+Robots.txt is a text file that gives instructions to web crawlers, such as search engine bots, about which parts of your site they may crawl. It follows the Robots Exclusion Protocol, and well-behaved crawlers check it before fetching other pages.
+
+It must live at the root of your domain, for example `https://example.com/robots.txt`. A file placed in a subfolder won't be used, and each subdomain needs its own.
+
+## Why robots.txt matters
+
+A robots.txt file helps you:
+
+- **Keep crawlers out of low-value areas**, such as admin panels, carts, checkout flows and internal search results.
+- **Focus crawling on the pages that matter**, which is especially useful on large sites.
+- **Point crawlers to your sitemap**, so they can discover your important URLs.
+
+It's important to understand what robots.txt doesn't do. It controls crawling, not indexing. A blocked URL can still appear in search results if other pages link to it, usually without a description. To keep a page out of the index, use a noindex meta tag on a page crawlers can access, or protect it with a login. Robots.txt is also publicly readable, so never use it to hide sensitive URLs.
+
+## Robots.txt syntax explained
+
+A robots.txt file is made of groups of rules. The core directives are:
+
+| Directive | What it does | Example |
+| --- | --- | --- |
+| User-agent | Names the crawler the rules apply to; an asterisk means all crawlers | `User-agent: *` |
+| Disallow | A path the crawler should not crawl | Disallow: /admin |
+| Allow | An exception inside a disallowed path (supported by major search engines) | Allow: /admin/help |
+| Sitemap | The full URL of your XML sitemap | Sitemap: https://example.com/sitemap.xml |
+
+An empty Disallow line means nothing is blocked. A single slash blocks the entire site.
+
+## How to create a robots.txt file with RankBoost
+
+The [Robots.txt Generator](/tools/robots-txt-generator) handles the syntax for you:
+
+1. **Choose a default policy.** Select "Allow all crawlers" for a normal live site, or "Block all crawlers" for something like a private staging site.
+2. **List the paths to disallow.** Enter one path per line, such as /admin, /cart and /checkout. These apply when the policy is set to allow.
+3. **Add your sitemap URL.** Use the full address of your XML sitemap.
+4. **Copy the output.** The tool generates rules for all crawlers using `User-agent: *`, followed by your Disallow lines and a Sitemap line.
+5. **Save it as robots.txt** and upload it to your site's root directory, or paste it into your CMS or hosting platform's robots.txt setting.
+6. **Test it.** Visit yourdomain.com/robots.txt in a browser to confirm it's live, then review it in Google Search Console's robots.txt report.
+
+If you leave the disallow list empty with the allow policy, the generator writes an empty Disallow line, which allows everything. If you choose the block policy, it writes Disallow: / regardless of the paths entered.
+
+The generator creates a single set of rules for all crawlers. If you need separate rules for specific bots, you can add extra User-agent groups to the file by hand.
+
+## Robots.txt examples
+
+### Allow everything and list a sitemap
+
+```text
+User-agent: *
+Disallow:
+
+Sitemap: https://example.com/sitemap.xml
+```
+
+### Block common private areas
+
+```text
+User-agent: *
+Disallow: /admin
+Disallow: /cart
+Disallow: /checkout
+
+Sitemap: https://example.com/sitemap.xml
+```
+
+### Block the whole site
+
+```text
+User-agent: *
+Disallow: /
+```
+
+Use this last example only for sites that genuinely shouldn't be crawled, such as a staging environment, and remember that it doesn't stop those pages being indexed if they're linked elsewhere.
+
+## Robots.txt best practices
+
+### Keep it simple
+
+Most sites need only a handful of rules. Every extra line is something that can go wrong later.
+
+### Always include your sitemap
+
+The Sitemap line helps crawlers find your sitemap without relying on Search Console alone. Build one with the [XML Sitemap Generator](/tools/sitemap-generator) if you don't have it yet.
+
+### Don't block CSS, JavaScript or images you need
+
+Search engines render pages much like a browser. Blocking resources your pages depend on can stop them from understanding your layout and content.
+
+### Don't block pages you've canonicalised
+
+If a duplicate page points to a canonical URL, crawlers need to access it to see that tag. You can create those tags with the [Canonical Tag Generator](/tools/canonical-generator).
+
+### Review it after every major change
+
+Redesigns, migrations and new CMS plugins are common times for robots.txt to change unexpectedly.
+
+## Common robots.txt mistakes
+
+- **Leaving Disallow: / in place after launch**, often copied over from a staging site. This can block your entire site from being crawled.
+- **Using robots.txt to remove pages from search.** Use noindex or remove the page instead.
+- **Placing the file in the wrong location.** It must be at the domain root.
+- **Typos and wrong capitalisation in paths.** Paths are case-sensitive, so /Admin and /admin are different.
+- **Listing secret URLs.** Anyone can read your robots.txt file.
+
+## FAQ
+
+### Does every website need a robots.txt file?
+
+Not strictly. If there's no file, crawlers assume they can crawl everything. Even so, a simple file with a Sitemap line is a useful, low-effort addition for most sites.
+
+### How long does it take for robots.txt changes to apply?
+
+Search engines cache robots.txt and refresh it periodically, so changes usually take effect within a short time rather than instantly. Google generally refreshes its cached copy at least once a day.
+
+### Can I block AI crawlers with robots.txt?
+
+Many AI crawlers publish user-agent names and say they respect robots.txt, so you can add groups for them by hand. Compliance is voluntary, though, so robots.txt isn't a guarantee.
+
+### What's the difference between robots.txt and a meta robots tag?
+
+Robots.txt applies rules to URL paths before crawling happens. A meta robots tag sits on an individual page and can control indexing and link-following once that page is crawled.
+
+## Build your robots.txt in seconds
+
+A clean robots.txt file keeps crawlers focused on the pages you care about. Generate yours with the [RankBoost Robots.txt Generator](/tools/robots-txt-generator), upload it to your root directory and check it in Search Console. For more crawl and indexing fundamentals, read our [SEO basics guide](/blog/seo-basics).

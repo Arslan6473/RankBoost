@@ -9,7 +9,7 @@ import { GithubIcon } from "@/components/shared/social-icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact",
-  description: "Get in touch with the SEO Text Tools team. Questions, feedback and tool requests welcome.",
+  description: "Get in touch with the RankBoost team. Questions, feedback and tool requests welcome.",
   path: "/contact",
 });
 

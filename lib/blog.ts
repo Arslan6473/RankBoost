@@ -15,6 +15,9 @@ export interface PostMeta {
   tags: string[];
   excerpt: string;
   readingTime: string;
+  /** Slug of the tool this guide supports, if any. */
+  tool?: string;
+  keywords: string[];
 }
 
 export interface TocItem {
@@ -40,6 +43,8 @@ function toMeta(slug: string, data: Record<string, unknown>): PostMeta {
     tags: Array.isArray(data.tags) ? (data.tags as string[]) : [],
     excerpt: String(data.excerpt ?? data.description ?? ""),
     readingTime: String(data.readingTime ?? "5 min read"),
+    tool: typeof data.tool === "string" ? data.tool : undefined,
+    keywords: Array.isArray(data.keywords) ? (data.keywords as string[]) : [],
   };
 }
 
@@ -55,6 +60,11 @@ export function getAllPosts(): PostMeta[] {
   return getPostSlugs()
     .map((slug) => toMeta(slug, readFile(slug).data))
     .sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+/** The guide written for a given tool, if one exists. */
+export function getPostForTool(toolSlug: string): PostMeta | undefined {
+  return getAllPosts().find((p) => p.tool === toolSlug);
 }
 
 export function getPost(slug: string): { meta: PostMeta; content: string } | null {

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Clock } from "lucide-react";
+import Link from "next/link";
+import { Clock, ArrowRight } from "lucide-react";
+import { getTool } from "@/lib/tools/registry";
 import {
   getPost,
   getPostSlugs,
@@ -37,7 +39,8 @@ export async function generateMetadata({
     title: post.meta.title,
     description: post.meta.description,
     path: `/blog/${slug}`,
-    keywords: post.meta.tags,
+    image: `/blog/${slug}/opengraph-image`,
+    keywords: [...post.meta.keywords, ...post.meta.tags],
     type: "article",
     publishedTime: post.meta.date,
   });
@@ -55,6 +58,7 @@ export default async function BlogPostPage({
   const { meta, content } = post;
   const toc = getTableOfContents(content);
   const related = getRelatedPosts(slug, meta.tags);
+  const tool = meta.tool ? getTool(meta.tool) : undefined;
 
   return (
     <>
@@ -66,6 +70,7 @@ export default async function BlogPostPage({
           path: `/blog/${slug}`,
           date: meta.date,
           author: meta.author,
+          image: `/blog/${slug}/opengraph-image`,
         })}
       />
 
@@ -114,7 +119,11 @@ export default async function BlogPostPage({
         {/* Body + TOC */}
         <div className="mx-auto mt-8 grid max-w-6xl gap-10 lg:grid-cols-[1fr_240px]">
           <div className="mx-auto w-full max-w-3xl">
+            {tool && <ToolCallout slug={tool.slug} title={tool.title} description={tool.description} />}
+
             <Mdx source={content} />
+
+            {tool && <ToolCallout slug={tool.slug} title={tool.title} description={tool.description} />}
 
             <div className="mt-10 border-t border-border pt-6">
               <ShareButtons path={`/blog/${slug}`} title={meta.title} />
@@ -133,7 +142,7 @@ export default async function BlogPostPage({
                 <div className="text-sm text-muted-foreground">{meta.role}</div>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Writing about SEO, content strategy and the craft of clear
-                  writing at SEO Text Tools.
+                  writing at RankBoost.
                 </p>
               </div>
             </div>
@@ -161,5 +170,31 @@ export default async function BlogPostPage({
 
       <CtaBanner />
     </>
+  );
+}
+
+function ToolCallout({
+  slug,
+  title,
+  description,
+}: {
+  slug: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <Link
+      href={`/tools/${slug}`}
+      className="group my-8 flex items-center justify-between gap-4 rounded-2xl border border-primary/30 bg-primary/5 p-5 transition-colors hover:border-primary"
+    >
+      <div>
+        <div className="text-xs font-semibold uppercase tracking-wide text-primary">
+          Free tool
+        </div>
+        <div className="mt-1 font-semibold">{title}</div>
+        <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+      </div>
+      <ArrowRight className="size-5 shrink-0 text-primary transition-transform group-hover:translate-x-1" />
+    </Link>
   );
 }

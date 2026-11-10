@@ -8,7 +8,7 @@ import { CtaBanner } from "@/components/shared/cta-banner";
 export const metadata: Metadata = buildMetadata({
   title: "Blog",
   description:
-    "Practical guides on SEO, readability and content writing from the SEO Text Tools team.",
+    "Practical guides on SEO, readability and content writing from the RankBoost team.",
   path: "/blog",
 });
 

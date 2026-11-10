@@ -31,8 +31,8 @@ export function buildMetadata({
   noindex = false,
 }: SeoOptions = {}): Metadata {
   const fullTitle = title
-    ? `${title} — ${siteConfig.name}`
-    : `${siteConfig.name} — ${siteConfig.tagline}`;
+    ? `${title} | ${siteConfig.name}`
+    : `${siteConfig.name} | ${siteConfig.tagline}`;
   const url = absoluteUrl(path);
 
   return {

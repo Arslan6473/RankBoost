@@ -1,0 +1,127 @@
+---
+title: "What Is Schema Markup? A Beginner's Guide to JSON-LD for SEO"
+description: "What is schema markup? Learn how JSON-LD structured data works, which schema types to use, how to add and test it, and generate your own code for free."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["SEO", "Structured Data", "Technical SEO"]
+excerpt: "Schema markup helps search engines understand what your page is about and can make it eligible for rich results. Here's how it works and how to add it."
+readingTime: "7 min read"
+tool: "schema-generator"
+keywords: ["what is schema markup", "json-ld structured data", "how to add schema markup", "schema markup examples", "structured data for seo", "rich results"]
+---
+
+Schema markup is structured data you add to a web page to describe its content in a standard vocabulary search engines understand, such as "this is an article by this author" or "this is a product at this price." It's most often written in JSON-LD format and placed in a script tag on the page. Schema markup can make a page eligible for rich results, and you can generate ready-to-paste JSON-LD with the free [RankBoost Schema Markup Generator](/tools/schema-generator).
+
+## What schema markup is
+
+Schema markup uses the vocabulary maintained at schema.org, a shared project supported by major search engines. The vocabulary defines types, such as Article, Product and Organization, and properties for each, such as headline, price or author.
+
+There are three common formats for adding structured data: JSON-LD, Microdata and RDFa. Google recommends JSON-LD where possible, because it sits in its own block rather than being woven through your HTML, which makes it easier to add and maintain.
+
+Here's a simple JSON-LD example for an article:
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Complete Guide to SEO",
+  "description": "Learn the fundamentals of search engine optimization.",
+  "url": "https://example.com/seo-guide",
+  "author": {
+    "@type": "Person",
+    "name": "Jane Doe"
+  }
+}
+</script>
+```
+
+## Why schema markup matters for SEO
+
+Structured data is generally not a direct ranking factor, but it helps in two important ways.
+
+First, it removes ambiguity. Search engines are good at reading pages, but explicit labels — this is the price, this is the author, this is the organization's name — make your content easier to interpret correctly.
+
+Second, it can make your pages eligible for rich results: enhanced listings that may show extra details such as prices, availability, ratings or article information. Rich results can make a listing more noticeable, which may help click-through rate. Eligibility isn't a guarantee, though; search engines decide when to show them.
+
+## Common schema types
+
+| Schema type | Use it for | Typical properties |
+| --- | --- | --- |
+| Article | Blog posts, news and guides | headline, description, author, url |
+| Product | Individual product pages | name, description, offers (price, currency) |
+| Organization | Your company or brand | name, description, url, logo |
+| FAQPage | Pages with visible questions and answers | mainEntity with questions and answers |
+| LocalBusiness | Shops, offices and service areas | name, address, opening hours |
+
+There are many more types, from events and recipes to job postings. Start with the ones that best describe your most important pages.
+
+## How to add schema markup with RankBoost
+
+The [Schema Markup Generator](/tools/schema-generator) creates JSON-LD for three common types: Article, Product and Organization.
+
+1. **Choose a schema type.** Pick Article, Product or Organization.
+2. **Enter the name or headline.** For an article, this becomes the headline; for a product or organization, it becomes the name.
+3. **Add a description.** A short, accurate summary of the page or entity.
+4. **Add the URL.** This is included for Article and Organization types. Use the page's canonical URL.
+5. **Fill in the extra field.** Its meaning depends on the type: the author's name for Article, the price for Product, or the brand for Organization.
+6. **Copy the output.** The tool wraps your JSON-LD in a script tag, ready to paste.
+7. **Add it to your page**, usually in the head section, or via your CMS's custom code or structured data setting.
+8. **Validate it.** Run the page or code through Google's Rich Results Test or the Schema Markup Validator before relying on it.
+
+A note on Product markup: the generator sets the currency to USD. If you sell in another currency, edit the priceCurrency value before publishing. You can also extend the generated code by hand with extra properties, such as an image, availability or a logo, that the form doesn't include.
+
+If you need FAQ markup, use the separate [FAQ Schema Generator](/tools/faq-generator), which turns question-and-answer pairs into FAQPage JSON-LD.
+
+## Schema markup best practices
+
+### Mark up only what's visible on the page
+
+Structured data should describe content users can actually see. Adding reviews, prices or FAQs that don't appear on the page goes against Google's guidelines and can lead to manual actions.
+
+### Keep it accurate and up to date
+
+If a product price changes or an article is updated, update the structured data too. Mismatches between markup and visible content can make your markup ineligible for rich results.
+
+### Use the canonical URL
+
+Any url property should match the page's canonical address. If you haven't set one, the [Canonical Tag Generator](/tools/canonical-generator) can create the tag.
+
+### Combine it with social tags
+
+Schema markup helps search engines; Open Graph tags help social platforms. They do different jobs, so most pages benefit from both. The [Open Graph Generator](/tools/open-graph-generator) handles the social side.
+
+### Test after every change
+
+Validation tools catch syntax errors, missing required properties and warnings. A single missing comma can stop a JSON-LD block from being read.
+
+## Common schema markup mistakes
+
+- **Invalid JSON**, such as trailing commas or unescaped quotation marks.
+- **Choosing the wrong type**, like marking a blog post as a Product.
+- **Marking up hidden or misleading content.**
+- **Leaving placeholder values** in place, such as a default author name or a price of 0.00.
+- **Duplicating markup**, where a plugin and a manual block describe the same thing differently.
+
+## FAQ
+
+### Is JSON-LD better than Microdata?
+
+Both can work, but Google recommends JSON-LD because it's easier to add, read and maintain without changing your page's HTML structure.
+
+### How long does it take for rich results to appear?
+
+There's no fixed timeline. Search engines need to recrawl the page and process the markup, and even valid markup doesn't guarantee a rich result will be shown.
+
+### Can I add more than one schema type to a page?
+
+Yes. A page can include several structured data blocks, such as an Article and an Organization, as long as each accurately describes content on that page.
+
+### Does schema markup help with AI search features?
+
+Structured data makes your content's key facts explicit and machine-readable, which can help any system that reads your page. How individual AI or search features use it varies and isn't always documented, so treat it as a solid foundation rather than a guaranteed advantage.
+
+## Start adding structured data
+
+Schema markup is one of the clearest ways to tell search engines what your content is. Generate Article, Product or Organization JSON-LD with the [RankBoost Schema Markup Generator](/tools/schema-generator), validate it, and add it to your page. For a broader look at page-level optimisation, read our [on-page SEO guide](/blog/on-page-seo-guide).

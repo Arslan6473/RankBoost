@@ -1,4 +1,4 @@
-# SEO Text Tools
+# RankBoost
 
 A premium, free toolkit of 50+ SEO and text-analysis tools. Built with Next.js 15, TypeScript, Tailwind CSS v4 and a config-driven tool engine. Fast, private (deterministic tools run entirely in the browser), fully responsive, dark/light, and optimized for SEO.
 

@@ -71,11 +71,6 @@ export function softwareAppJsonLd(name: string, description: string, path: strin
     applicationCategory: "WebApplication",
     operatingSystem: "Any",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      ratingCount: "1280",
-    },
   };
 }
 

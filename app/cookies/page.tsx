@@ -5,7 +5,7 @@ import { Prose } from "@/components/shared/prose";
 
 export const metadata: Metadata = buildMetadata({
   title: "Cookie Policy",
-  description: "How SEO Text Tools uses cookies and local storage.",
+  description: "How RankBoost uses cookies and local storage.",
   path: "/cookies",
 });
 

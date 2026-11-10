@@ -6,7 +6,7 @@ import { Prose } from "@/components/shared/prose";
 
 export const metadata: Metadata = buildMetadata({
   title: "Terms of Service",
-  description: "The terms that govern your use of SEO Text Tools.",
+  description: "The terms that govern your use of RankBoost.",
   path: "/terms",
 });
 

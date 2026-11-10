@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Type } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
@@ -14,10 +14,10 @@ export function Logo({ className }: { className?: string }) {
       aria-label={siteConfig.name}
     >
       <span className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent text-white shadow-soft">
-        <Type className="size-[18px]" strokeWidth={2.5} />
+        <TrendingUp className="size-[18px]" strokeWidth={2.5} />
       </span>
       <span className="text-[15px]">
-        SEO<span className="text-primary">Text</span>Tools
+        Rank<span className="text-primary">Boost</span>
       </span>
     </Link>
   );

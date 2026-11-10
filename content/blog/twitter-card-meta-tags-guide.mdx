@@ -1,0 +1,121 @@
+---
+title: "Twitter Card Meta Tags: How to Set Up X Link Previews Right"
+description: "Learn how Twitter card meta tags work, the difference between summary and summary_large_image, image sizes and fixes, then generate your tags free."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["SEO", "Social Media", "Meta Tags"]
+excerpt: "Twitter cards turn plain links into rich previews on X. Here's how the tags work, which card type to choose and how to set them up correctly."
+readingTime: "6 min read"
+tool: "twitter-card-generator"
+keywords: ["twitter card meta tags", "x card tags", "summary_large_image", "twitter card image size", "how to add twitter cards", "twitter meta tags example"]
+---
+
+Twitter card meta tags are HTML tags that control how your link appears when it's shared on X (formerly Twitter), including the card style, title, description and image. Adding them lets you choose between a compact preview and a large, full-width image card instead of leaving the result to chance. The free [RankBoost Twitter Card Generator](/tools/twitter-card-generator) creates the tags for you and shows a preview of the card.
+
+## What Twitter cards are
+
+When someone posts a link on X, the platform looks at the page's meta tags to build a preview. Twitter card tags use a name attribute that starts with twitter: and live in the head section of your page:
+
+```html
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Best Running Shoes for 2026" />
+<meta name="twitter:description" content="Discover the best running shoes for 2026 with free shipping and easy returns." />
+<meta name="twitter:image" content="https://acme.com/og.png" />
+<meta name="twitter:site" content="@acme" />
+```
+
+The result is a card attached to the post that shows your image, headline and, depending on the layout, some description text.
+
+## Why Twitter card tags matter
+
+Posts with a well-formatted link preview tend to be easier to notice in a busy feed than a bare URL. Card tags also give you control. Without them, X will try to use your Open Graph tags, and if those are missing too, your link may appear with little or no preview.
+
+## Summary vs summary_large_image
+
+There are two card types most sites use:
+
+| Card type | What it looks like | Best for |
+| --- | --- | --- |
+| summary | A small square thumbnail beside the title | Home pages, profiles, simple pages |
+| summary_large_image | A large, full-width image above the title | Articles, products, anything visual |
+
+For most content, summary_large_image is the stronger choice because it takes up more space in the feed and puts your image front and centre.
+
+## The core Twitter card tags
+
+- **twitter:card** — the card type, such as summary or summary_large_image.
+- **twitter:title** — the headline for the card. Keep it concise.
+- **twitter:description** — a short summary. Depending on how the card is displayed, this may be shortened or not shown.
+- **twitter:image** — a full URL to the image used in the card.
+- **twitter:site** — the X handle of the website or brand, including the @ sign.
+
+## How to create Twitter card tags with RankBoost
+
+The [Twitter Card Generator](/tools/twitter-card-generator) builds these tags from a short form:
+
+1. **Choose the card type.** Pick summary_large_image or summary.
+2. **Enter the title.** Use your page title or a version written for social audiences.
+3. **Write the description.** One or two sentences that explain what the reader will get.
+4. **Add the image URL.** Use an absolute URL to an image hosted on your site.
+5. **Add your @handle (optional).** If you fill in twitter:site, the tag is included; if you leave it blank, it's left out.
+6. **Check the preview.** The tool shows how your card is likely to look in a post.
+7. **Copy the HTML** into the head section of your page.
+
+## Best practices for Twitter cards
+
+### Set Open Graph tags as well
+
+X reads Open Graph tags as a fallback, and other platforms rely on them entirely. Setting up both gives you full coverage. The [Open Graph Generator](/tools/open-graph-generator) creates the og: set, and you can reuse the same title, description and image.
+
+### Use the right image size
+
+For summary_large_image, an image of at least 1200 × 628 pixels with roughly a 1.91:1 ratio is commonly recommended. For the summary card, a square image works best. Keep text and logos away from the edges in case of cropping.
+
+### Keep titles and descriptions tight
+
+Cards display limited text, so lead with the most important words. Your meta description is often a good starting point; the [Meta Description Generator](/tools/meta-description-generator) can help you draft one that works in both places.
+
+### Use absolute URLs
+
+The image must be reachable via a full, public URL. Relative paths, images behind a login or images blocked to crawlers won't display.
+
+## Common Twitter card mistakes
+
+- **Wrong card type**, such as using summary when you want a large image.
+- **Low-resolution images**, which can look blurry or fall back to a smaller layout.
+- **Missing or broken image URLs**, leaving the card without a visual.
+- **Forgetting the @ in twitter:site**, which can make the handle invalid.
+- **Inconsistent tags** where the Twitter card and Open Graph tags describe different content.
+
+## Example tag set for a blog post
+
+```html
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to Choose Running Shoes: A Beginner's Guide" />
+<meta name="twitter:description" content="Five simple steps to find the right fit, from gait to cushioning." />
+<meta name="twitter:image" content="https://example.com/images/running-guide-share.png" />
+<meta name="twitter:site" content="@example" />
+```
+
+## FAQ
+
+### Do Twitter cards still work now that Twitter is X?
+
+Yes. X continues to use the twitter: meta tags to build link previews, so the tag names haven't changed.
+
+### Can I skip Twitter card tags if I already have Open Graph tags?
+
+X can fall back to og: tags, so links will often still show a preview. However, the twitter:card tag is what sets the card style, so it's worth adding at least that tag and ideally the full set.
+
+### Why is my card showing an old image?
+
+Link previews can be cached. Check that the new image URL is correct and public, then allow some time for the preview to refresh or reshare the link after updating.
+
+### Is twitter:site the same as twitter:creator?
+
+No. twitter:site is the handle of the website or brand, while twitter:creator identifies the individual author. The RankBoost generator covers twitter:site; you can add a creator tag manually if you need one.
+
+## Get better link previews on X
+
+Well-configured card tags make your links look intentional and polished every time they're shared. Create yours with the [RankBoost Twitter Card Generator](/tools/twitter-card-generator), preview the result, and pair it with a matching set of Open Graph tags for full social coverage.

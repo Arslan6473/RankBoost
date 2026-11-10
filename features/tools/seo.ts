@@ -431,7 +431,7 @@ export const seoTools: ToolDefinition[] = [
     title: "Schema Markup Generator",
     description: "Generate JSON-LD structured data.",
     longDescription:
-      "Create ready-to-paste JSON-LD structured data for common schema types — Article, Product, Organization and FAQ — to unlock rich results.",
+      "Create ready-to-paste JSON-LD structured data for common schema types — Article, Product and Organization — to help search engines understand your page.",
     keywords: ["schema generator", "json-ld generator", "structured data"],
     icon: Braces,
     fields: [
@@ -866,7 +866,7 @@ export const seoTools: ToolDefinition[] = [
       "Commercial-investigation keywords ('best', 'review') suit comparison posts.",
     ],
     faqs: [
-      { question: "How is intent detected?", answer: "By scanning for signal words — 'how/what' (informational), 'buy/price' (transactional), 'best/review' (commercial), or brand names (navigational)." },
+      { question: "How is intent detected?", answer: "By scanning for signal words — 'how/what' (informational), 'buy/price' (transactional), 'best/review' (commercial), or navigation cues like 'login', 'official' or 'near me' (navigational). Brand-only queries aren't detected automatically, so review those by hand." },
     ],
     relatedSlugs: ["keyword-extractor", "keyword-cluster-generator", "keyword-density"],
     run: (text) => {

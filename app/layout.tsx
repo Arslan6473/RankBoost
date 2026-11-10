@@ -9,6 +9,8 @@ import { JsonLd, websiteJsonLd, organizationJsonLd } from "@/components/shared/j
 import { buildMetadata } from "@/lib/seo";
 import { getAllPosts } from "@/lib/blog";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { siteConfig } from "@/config/site";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -24,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   ...buildMetadata(),
-  metadataBase: new URL("https://seotexttools.com"),
+  metadataBase: new URL(siteConfig.url),
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
@@ -71,6 +73,7 @@ export default function RootLayout({
           <CommandMenu posts={posts} />
         </Providers>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

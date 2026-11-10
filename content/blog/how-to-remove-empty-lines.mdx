@@ -1,0 +1,113 @@
+---
+title: "How to Remove Empty Lines From Text (and Keep Paragraph Breaks)"
+description: "Learn how to remove empty lines from text, delete whitespace-only lines, and optionally keep one blank line between paragraphs using a free online tool."
+date: "2026-11-10"
+author: "RankBoost Team"
+role: "Editorial"
+tags: ["Text", "Formatting", "Text Cleanup"]
+excerpt: "Blank lines sneak in from copy-paste, exports and PDFs. Here's how to delete them all at once, or tidy them down to a single break between paragraphs."
+readingTime: "5 min read"
+tool: "remove-empty-lines"
+keywords: ["how to remove empty lines", "delete blank lines", "remove blank lines from text", "remove whitespace-only lines", "collapse multiple blank lines", "remove line gaps"]
+---
+
+To remove empty lines from text, paste it into a blank-line remover that filters out every line containing nothing (or only spaces and tabs) and joins the rest back together. The free [Remove Empty Lines tool](/tools/remove-empty-lines) does this instantly, and a single toggle lets you keep one blank line between paragraphs instead of deleting every gap.
+
+This guide explains where stray blank lines come from, when to delete them completely, and when it's better to just tidy them up.
+
+## Why text ends up full of blank lines
+
+Empty lines rarely appear on purpose. Typical sources include:
+
+- **Copying from web pages or PDFs**, where layout spacing turns into extra line breaks.
+- **Email and chat exports** that add a gap between every message.
+- **Spreadsheet or database exports** that include empty rows.
+- **Editing over time**, where deleted sentences leave their line breaks behind.
+- **Lines that only look empty** because they contain a few spaces or a tab.
+
+That last category is the sneaky one. A line holding three spaces looks blank but won't be caught by a simple "delete empty lines" search in many editors.
+
+## When to remove blank lines
+
+Deleting every blank line is the right move when:
+
+- You're preparing a **list for import**, such as keywords, URLs, email addresses or product SKUs. Empty rows can create blank records or validation errors.
+- You want an **accurate line count** for a list.
+- You're compacting **log files** or data so each line is a real entry.
+
+Keeping a single blank line is better when:
+
+- You're cleaning **prose**, where paragraph breaks help readability.
+- You're pasting content into a **CMS or Markdown editor**, which uses a blank line to separate paragraphs.
+
+## How to remove empty lines with RankBoost
+
+The [Remove Empty Lines tool](/tools/remove-empty-lines) runs in your browser, so nothing is uploaded. Here's how to use it:
+
+1. **Paste your text** into the input area.
+2. **Choose a mode.** Leave "Keep single blank line between blocks" off to delete every empty line. Turn it on to collapse runs of blank lines down to one.
+3. **Review the output** and the "Lines removed" metric, which shows how many lines were dropped.
+4. **Copy the cleaned text** wherever you need it.
+
+The tool treats whitespace-only lines as empty, so lines containing just spaces or tabs are removed along with truly empty ones. The text on non-empty lines isn't changed.
+
+## Examples: remove all vs keep single
+
+Say you start with this:
+
+```
+First paragraph.
+
+
+
+Second paragraph.
+
+Third paragraph.
+```
+
+| Mode | Result |
+| --- | --- |
+| Toggle off (remove all) | Three lines, one after another, with no gaps |
+| Toggle on (keep single) | One blank line between each paragraph |
+
+With the toggle on, the three blank lines after the first paragraph collapse to one, while the existing single gap stays as it is. That gives you consistent paragraph spacing without merging everything into a wall of text.
+
+## Best practices
+
+### Clean spaces first if lines look messy
+
+If your lines also have stray spaces at the start or end, run the text through [Remove Extra Spaces](/tools/remove-extra-spaces) as well. It trims every line and collapses repeated spaces, which makes the rest of your cleanup more predictable.
+
+### Then remove duplicates
+
+For lists, a reliable cleanup sequence is: remove extra spaces, remove empty lines, then [Remove Duplicate Lines](/tools/remove-duplicate-lines). Doing it in this order means near-identical entries are normalized before they're compared.
+
+### Don't strip blank lines from code or Markdown blindly
+
+In code, blank lines separate logical blocks. In Markdown, a blank line is what separates paragraphs and lists. Removing all of them can merge paragraphs or break formatting. Use the "keep single" option instead.
+
+### Verify the result with a count
+
+Run the before and after versions through the [Line Counter](/tools/line-counter). It reports total, non-empty and empty lines, so you can confirm the empty count dropped to zero (or that only intended gaps remain).
+
+## FAQ
+
+### What's the difference between an empty line and a line break?
+
+A line break is the invisible character that ends a line. An empty line is what you get when two line breaks sit next to each other with nothing, or only whitespace, between them. Removing empty lines keeps the line breaks that end real lines of text.
+
+### Will this join my sentences into one paragraph?
+
+No. Each non-empty line stays on its own line. Only the blank lines between them are removed, so a list of ten items stays a list of ten items.
+
+### Can I remove empty lines from a CSV file?
+
+Yes. Paste the CSV contents into the tool and use the default mode to remove empty rows. Then copy the output back into your file. Keep a backup of the original, especially for large or important data.
+
+### Why are there still gaps after cleaning?
+
+If you enabled "Keep single blank line between blocks", single gaps are kept on purpose. Turn the toggle off to remove every blank line.
+
+## Tidy your text in seconds
+
+Blank lines are one of the most common forms of text clutter, and they're tedious to delete by hand. Paste your content into the [Remove Empty Lines tool](/tools/remove-empty-lines), pick whether to keep paragraph spacing, and copy the clean result.
